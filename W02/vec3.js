@@ -19,19 +19,19 @@ class Vec3
 		return this.x + this.y +this.z;
 	}
 
-	min(v)
+	min()
 	{
-		return Math.min(v)
+		return Math.min(this.x,this.y,this.z);
 	}
 
-	max(v)
+	max()
 	{
-		return Math.max(v)
+		return Math.max(this.x,this.y,this.z);
 	}
 
-	mid(v)
+	mid()
 	{
-		return Math.median(v)
+		return Math.median(this.x,this.y,this.z);
 	}
 
 }
