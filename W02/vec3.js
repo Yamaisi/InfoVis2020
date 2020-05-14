@@ -31,7 +31,15 @@ class Vec3
 
 	mid()
 	{
-		return Math.median(this.x,this.y,this.z);
+		var array = [this.x, this.y, this.z];
+		array.sort(
+			function(a,b){
+				return (a < b ? -1 : 1);
+			}
+		);
+		
+		return array[1];
+		//return Math.median(this.x,this.y,this.z);
 	}
 
 }
