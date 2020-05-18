@@ -1,0 +1,55 @@
+<html>
+	<head>
+		<title>W02: Task3</title>
+	</head>
+	
+	<body>
+		<div class="vec0">
+			<label for="vec0Num">V0:</label>
+			<input type="number" name="x0" id="x0"/>
+			<input type="number" name="y0" id="y0"/>
+			<input type="number" name="z0" id="z0"/>
+		</div>
+		<div class="vec1">
+			<label for="vec1Num">V1:</label>
+			<input type="number" name="x1" id="x1"/>
+			<input type="number" name="y1" id="y1"/>
+			<input type="number" name="z1" id="z1"/>
+		</div>
+		<div class="vec2">
+			<label for="vec2Num">V2:</label>
+			<input type="number" name="x2" id="x2"/>
+			<input type="number" name="y2" id="y2"/>
+			<input type="number" name="z2" id="z2"/>
+		</div>
+		<input type="button" value="計算実行" onclick="areaOfTriangle()"/>
+		<script src="vec3.js"></script>
+		<script>
+		function areaOfTriangle(){
+			var x0 = document.getElementById("x0").value;
+			var y0 = document.getElementById("y0").value;
+			var z0 = document.getElementById("z0").value;
+			var x1 = document.getElementById("x1").value;
+			var y1 = document.getElementById("y1").value;
+			var z1 = document.getElementById("z1").value;
+			var x2 = document.getElementById("x2").value;
+			var y2 = document.getElementById("y2").value;
+			var z2 = document.getElementById("z2").value;
+			//document.write(z2);
+			
+			//var v0 = new Vec3( x0, y0, z0 );
+			//var v1 = new Vec3( x1, y1, z1 );
+			//var v2 = new Vec3( x2, y2, z2 );
+			
+			var va = new Vec3(x1-x0, y1-y0, z1-z0);
+			var vb = new Vec3(x2-x0, y2-y0, z2-z0);
+			
+			var area2 = (va.x**2 + va.y**2 + va.z**2)*(vb.x**2 + vb.y**2 + vb.z**2)-(va.x*vb.x + va.y*vb.y + va.z*vb.z)**2;
+			var area = Math.sqrt(area2)/2
+			
+			document.write(area);
+			//document.form.area = area;
+		}
+		</script>
+	</body>
+</html>
