@@ -18,8 +18,8 @@ function main()
     document.body.appendChild( renderer.domElement );
     
     var light = new THREE.PointLight(0xffffff);
-    light.position.set(1,1,1);
-    scene.add(light);
+    light.position.set( 1, 1, 1 );
+    scene.add( light );
 
     var geometry = new THREE.BoxGeometry( 1, 1, 1 );
     var material = new THREE.MeshLambertMaterial( { color: 0xffffff } );
