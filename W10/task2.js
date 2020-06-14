@@ -93,23 +93,19 @@ function TransferFunctionTexture()
     var width = resolution;
     var height = 1;
     var data = new Float32Array( width * height * 4 );
-    var colorList = [];
-    for ( var i = 0; i < 256; i++ )
-    {
-        var S = i / 255.0; // [0,1]
-        var R = 1.0;
-        var G = 1.0 - S;
-        var B = 1.0 - S;
-        colorList[i] = new THREE.Color( R, G, B );
-    }
     for ( var i = 0; i < resolution; i++ )
     {
         //var color = KVS.RainbowColorMap( 0, 255, i );
-        var color = colorList[i]
         var alpha = i / 255.0;
-        data[ 4 * i + 0 ] = color.x;
-        data[ 4 * i + 1 ] = color.y;
-        data[ 4 * i + 2 ] = color.z;
+        var R = 1.0;
+        var G = 1.0 - alpha;
+        var B = 1.0 - alpha;
+        data[ 4 * i + 0 ] = R;
+        data[ 4 * i + 1 ] = G;
+        data[ 4 * i + 2 ] = B;
+        //data[ 4 * i + 0 ] = color.x;
+        //data[ 4 * i + 1 ] = color.y;
+        //data[ 4 * i + 2 ] = color.z;
         data[ 4 * i + 3 ] = alpha;
     }
 
