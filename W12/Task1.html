@@ -32,7 +32,7 @@ d3.csv("https://yamaisi.github.io/InfoVis2020/W12/Covid19-May.csv", function(dat
 // X axis
 var x = d3.scaleBand()
   .range([ 0, width ])
-  .domain(data.map(function(d) { return d.sufferer; }))
+  .domain(data.map(function(d) { return d.date; }))
   .padding(0.2);
 svg.append("g")
   .attr("transform", "translate(0," + height + ")")
@@ -60,5 +60,7 @@ svg.selectAll("mybar")
     .attr("fill", "#69b3a2")
 
 })
+
+document.write("5月の全国のCovid-19発症者数");
 
 </script>
